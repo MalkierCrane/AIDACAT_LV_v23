@@ -8,7 +8,7 @@ using namespace std;
 //Šī funkcija izvada lietošanas palīdzību
 void printHelp() {
 
-    cout << "Ilustraciju aprakstu pieejamibas novertesanas programma" << endl;
+    cout << "Attelu aprakstu precizitātes un pilnibas analizes prototips pieejamibas testesanai" << endl;
     cout << endl;
 
     // Flickr8k režīma piemērs - noklusējumā ar pilnu datu kopu (limit 0 = visi attēli)

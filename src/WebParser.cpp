@@ -214,7 +214,7 @@ vector<ImageItem> WebParser::parseImages(string html, string pageUrl, int limit)
         item.altText = getAttribute(tag, "alt");
 
         if (item.altText.size() == 0) {
-            item.note = "alt teksts nav atrasts vai ir tukss";
+            item.note = "skaidrojosais teksts nav atrasts vai ir tukss";
         }
         else {
             item.note = "ok";

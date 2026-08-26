@@ -91,7 +91,7 @@ void Evaluation::ensureCorpusStats() {
     // Ja korpuss neielādējās (fails nav atrasts vai tukšs), izvadu brīdinājumu un beidzu
     if (corpusItems.size() == 0) {
         cout << "Bridinajums: korpusa fails '" << corpusPath << "' netika atrasts vai ir tukss." << endl;
-        cout << "CIDEr metrika izmantos vienkarsoto versiju bez korpusa TF-IDF svariem." << endl;
+        cout << "CIDER metrika izmantos vienkarsoto versiju bez korpusa TF-IDF svariem." << endl;
 
         corpusStatsAvailable = false;
         return;
@@ -235,7 +235,7 @@ void Evaluation::runSingle(string imagePath, string altText, bool classifyComple
     makeOutputDir();
 
     cout << "Attels: " << imagePath << endl;
-    cout << "Parbaudamais alt teksts: " << altText << endl;
+    cout << "Parbaudamais skaidrojosais  teksts: " << altText << endl;
 
     string reference = florence.generateCaption(imagePath);
     cout << "Florence reference: " << reference << endl;
@@ -359,7 +359,7 @@ void Evaluation::runWeb(string url, int limit, bool classifyComplexity) {
             csv << csvSafe("") << ",";
             csv << "0,0,0,0,0,0,0,0,0,";
             csv << csvSafe("insufficient") << ",";
-            csv << csvSafe("alt teksts nav atrasts vai ir tukss") << ",";
+            csv << csvSafe("skaidrojosais teksts nav atrasts vai ir tukss") << ",";
             csv << csvSafe("decorative") << ",";
             csv << (images[i].wrappedInAnchor ? "true" : "false") << endl;
             continue;
@@ -435,7 +435,7 @@ void Evaluation::runWeb(string url, int limit, bool classifyComplexity) {
     csv.close();
 
     cout << endl << "Web rezims pabeigts" << endl;
-    cout << "Vertetie atteli ar alt tekstu: " << scoredCount << endl;
+    cout << "Vertetie atteli ar skaidrojoso tekstu: " << scoredCount << endl;
 
     if (scoredCount > 0) {
         double average = totalScore / scoredCount;
